@@ -42,33 +42,19 @@ public class Character {
                 name, health, maxHealth, strength, speed);
     }
 
-    // Prüfen, ob der Charakter noch lebt
     public boolean isAlive() {
         return this.health > 0;
     }
 
-    // Getter für die Geschwindigkeit
     public int getSpeed() {
         return speed;
     }
 
-    // Getter für den Namen
     public String getName() {
         return name;
     }
 
-    // Getter für die aktuelle Gesundheit
     public int getHealth() {
         return health;
-    }
-
-    // Getter für die maximale Gesundheit
-    public int getMaxHealth() {
-        return maxHealth;
-    }
-
-    // Getter für die Stärke
-    public int getStrength() {
-        return strength;
     }
 }
