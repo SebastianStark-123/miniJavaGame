@@ -10,9 +10,8 @@ public class Character {
     private final int strength;  // Stärke für Angriffe
     private final int speed;     // Geschwindigkeit für Reihenfolge im Kampf
 
-    private static final Random RANDOM = new Random(); // Vermeidet mehrfaches Erstellen von Random-Instanzen
+    private static final Random RANDOM = new Random();
 
-    // Konstruktor
     public Character(String name, int health, int strength, int speed) {
         this.name = name;
         this.health = health;
