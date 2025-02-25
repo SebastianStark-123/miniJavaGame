@@ -20,16 +20,16 @@ public class Main {
     public static void main(String[] args) {
 
         // Generiere Gegner Anzahl
-        int numberOfEnemies = getRandomValue(MIN_ENEMIES, MAX_ENEMIES);
+        int numberOfEnemies = generateRandomValue(MIN_ENEMIES, MAX_ENEMIES);
         System.out.println("You will face " + numberOfEnemies + " enemies!");
 
         // Generiere Gegner Stats
-        Character enemy = createRandomCharacter();
+        Character enemy = generateRandomEnemyCharacter();
         System.out.println("Enemy stats:");
         enemy.printStatus();
 
         // Ziel-Winrate
-        int targetWinRate = getRandomValue(MIN_WINRATE, MAX_WINRATE);
+        int targetWinRate = generateRandomValue(MIN_WINRATE, MAX_WINRATE);
         System.out.println("Try to achieve a winrate of " + targetWinRate + "%");
 
         // Spieler-Eingabe
@@ -42,10 +42,10 @@ public class Main {
         displayResults(wins, numberOfEnemies, targetWinRate);
     }
 
-    public static Character createRandomCharacter() {
-        int health = getRandomValue(MIN_HEALTH, MAX_HEALTH);
-        int strength = getRandomValue(MIN_STRENGTH, MAX_STRENGTH);
-        int speed = getRandomValue(MIN_SPEED, MAX_SPEED);
+    public static Character generateRandomEnemyCharacter() {
+        int health = generateRandomValue(MIN_HEALTH, MAX_HEALTH);
+        int strength = generateRandomValue(MIN_STRENGTH, MAX_STRENGTH);
+        int speed = generateRandomValue(MIN_SPEED, MAX_SPEED);
         return new Character("Enemy", health, strength, speed);
     }
 
@@ -117,7 +117,7 @@ public class Main {
         System.out.println("The difference from the target winrate (" + targetWinRate + "%) is: " + (roundedWinRate - targetWinRate) + "%");
     }
 
-    public static int getRandomValue(int min, int max) {
+    public static int generateRandomValue(int min, int max) {
         return RANDOM.nextInt(max - min + 1) + min;
     }
 }
